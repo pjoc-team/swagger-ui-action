@@ -19,22 +19,11 @@ Debug script's out.
 ## Example usage
 
 ```yaml
-name: 'Swagger ui Action'
-description: 'Generate swagger ui by json files'
-inputs:
-  dir:  # id of input
-    description: 'Dir to find swagger json'
-    required: true
-    default: './'
-  pattern:
-    description: 'Pattern to find json, for example: *.swagger.json'
-    required: true
-    default: '*.json'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+- name: swagger ui
+  uses: pjoc-team/swagger-ui-action@v0.0.2
+  with:
+    dir: './'
+    pattern: '*.json'
+    debug: 'true'
 
 ```
