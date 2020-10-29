@@ -2,19 +2,19 @@
 
 env
 
-if [ -n "$debug" ]; then
+if [ -n "${INPUT_DEBUG}" ]; then
   set -x
 fi
 
 mkdir -p /usr/share/nginx/html/apis/
 mkdir -p ./swagger-ui/
-find "${dir}" -name "${pattern}" -type f -exec cp "{}" /usr/share/nginx/html/apis/  \;
+find "${INPUT_DIR}" -name "${INPUT_PATTERN}" -type f -exec cp "{}" /usr/share/nginx/html/apis/  \;
 
 find /usr/share/nginx/html/apis/
 
 SWAGGER_CONFIG=$(
   cd /usr/share/nginx/html/apis/
-  find . -type f -name "${pattern}" | sed 's/.//' | sort | while read line; do
+  find . -type f -name "${INPUT_PATTERN}" | sed 's/.//' | sort | while read line; do
     echo "{\"name\":\"${line:1}\",\"url\":\"/apis${line}\"}"
   done | tr '\n' ',' | sed 's/.$//' | sed 's/$/]}/' | sed 's/^/{"urls":[/'
 )
