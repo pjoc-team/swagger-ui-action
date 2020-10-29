@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 mkdir -p /apis/
 find "${dir}" -name "${pattern}" -type f -exec cp "{}" /apis/  \;
