@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+if [ -n "$debug" ]; then
+  set -x
+fi
+
 mkdir -p /usr/share/nginx/html/apis/
 mkdir -p ./swagger-ui/
 find "${dir}" -name "${pattern}" -type f -exec cp "{}" /usr/share/nginx/html/apis/  \;
