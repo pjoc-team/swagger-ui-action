@@ -1,4 +1,4 @@
-name: 'Swagger ui Action'
+name: 'swagger ui Action'
 description: 'Generate swagger ui by json files'
 inputs:
   dir:  # id of input
