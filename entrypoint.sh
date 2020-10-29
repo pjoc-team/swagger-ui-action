@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+env
+
 if [ -n "$debug" ]; then
   set -x
 fi
