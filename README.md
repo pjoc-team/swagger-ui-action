@@ -1,23 +1,40 @@
-# Hello world docker action
+# Swagger ui action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+This action generation swagger ui. Example: [swagger-ui-action](http://pjoc-team.github.io/swagger-ui-action)
 
 ## Inputs
 
-### `who-to-greet`
+### `dir`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Directory to scan. Default `"./"`.
 
-## Outputs
+### `pattern`
 
-### `time`
+**Required** Pattern to find swagger json. Default `"*.json"`.
 
-The time we greeted you.
+### `debug`
+
+Debug script's out.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+name: 'Swagger ui Action'
+description: 'Generate swagger ui by json files'
+inputs:
+  dir:  # id of input
+    description: 'Dir to find swagger json'
+    required: true
+    default: './'
+  pattern:
+    description: 'Pattern to find json, for example: *.swagger.json'
+    required: true
+    default: '*.json'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
 ```

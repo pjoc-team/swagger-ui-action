@@ -12,7 +12,7 @@ inputs:
   debug:
     description: 'Debug output'
     required: false
-    default: 'true'
+    default: ''
 outputs:
   time: # id of output
     description: 'The time we greeted you'
