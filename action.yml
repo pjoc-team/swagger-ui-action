@@ -1,15 +1,17 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Swagger ui Action'
+description: 'Generate swagger ui by json files'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  dir:  # id of input
+    description: 'Dir to find swagger json'
     required: true
-    default: 'World'
+    default: './'
+  pattern:
+    description: 'Pattern to find json, for example: *.swagger.json'
+    required: true
+    default: '*.json'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}

@@ -8,11 +8,12 @@ jobs:
     # Checkout
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Hello world action step
-      id: hello
+    - name: Swagger ui action
+      id: swagger-ui-action
       uses: ./
       with:
-        who-to-greet: 'Mona the Octocat'
+        dir: './'
+        pattern: '*.json'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
