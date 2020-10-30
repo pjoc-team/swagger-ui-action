@@ -45,3 +45,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: swagger-ui
 ```
+
+## Contributors
+
+<!-- readme: contributors -start --> 
+<!-- readme: contributors -end -->
