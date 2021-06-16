@@ -2,6 +2,7 @@
 FROM swaggerapi/swagger-ui:latest
 
 ENV CONFIG_URL swagger-config.json
+ENV URLS_PRIMARY_NAME users-openapi.yml
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
