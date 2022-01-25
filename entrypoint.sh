@@ -7,7 +7,7 @@ if [ -n "${INPUT_DEBUG}" ]; then
 fi
 
 mkdir -p /usr/share/nginx/html/apis/
-find "${INPUT_DIR}" -name "${INPUT_PATTERN}" -type f -exec cp "{}" /usr/share/nginx/html/apis/  \;
+find "${INPUT_DIR}" -name "${INPUT_PATTERN}" -type f -exec cp --parents "{}" /usr/share/nginx/html/apis/  \;
 
 find /usr/share/nginx/html/
 
