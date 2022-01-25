@@ -13,8 +13,8 @@ find /usr/share/nginx/html/
 
 SWAGGER_CONFIG=$(
   cd /usr/share/nginx/html/apis/
-  find . -type f -name "${INPUT_PATTERN}" | sed 's/.//' | sort | while read line; do
-    echo "{\"name\":\"${line:3}\",\"url\":\"apis${line}\"}"
+  find . -type f -maxdepth 3 -name "${INPUT_PATTERN}" | sed 's/.//' | sort | while read line; do
+    echo "{\"name\":\"${line:13}\",\"url\":\"apis${line}\"}"
   done | tr '\n' ',' | sed 's/.$//' | sed 's/$/]}/' | sed 's/^/{"urls":[/'
 )
 
