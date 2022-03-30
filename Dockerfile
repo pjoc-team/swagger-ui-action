@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM swaggerapi/swagger-ui:latest
+FROM swaggerapi/swagger-ui:v4.9.1
 
 ENV CONFIG_URL swagger-config.json
 # ENV URLS_PRIMARY_NAME users.yml
