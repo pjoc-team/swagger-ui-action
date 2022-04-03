@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM swaggerapi/swagger-ui:latest
+FROM swaggerapi/swagger-ui:v4.8.0
 
 ENV CONFIG_URL swagger-config.json
 
